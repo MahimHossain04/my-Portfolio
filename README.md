@@ -8,7 +8,7 @@ This portfolio showcases my skills, projects, education, and professional journe
 ## 🚀 Live Demo
 
 🔗 **Visit Portfolio:**  
-https://mahimhossain04.github.io/My-Portfolio/
+https://mahimhossain.netlify.app/#home
 
 ---
 
