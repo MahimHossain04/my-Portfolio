@@ -8,6 +8,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
   <style>
     * {
       margin: 0;
@@ -1714,6 +1716,28 @@ button:active,
   letter-spacing: 1px;
 }
 
+.typing {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  color: #e5e7eb;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  border-left: 3px solid #a855f7;
+  padding-left: 15px;
+}
+
+.typing::after {
+  content: '|';
+  animation: blink 1s infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
   </style>
 </head>
 <script>
@@ -1776,12 +1800,7 @@ button:active,
     <div class="content">
       <div class="badge">🚀 Open to Opportunities</div>
       <h1>Hi, I’m <span>Mahim</span></h1>
-      <h2>Computer Science & Engineering Student</h2>
-      <p>
-        Aspiring Software Engineer passionate about building
-        <span style="color:#a855f7;">impactful solutions</span>
-        through clean code and innovative thinking.
-      </p>
+      <div id="typing" class="typing"></div>
       <div class="buttons">
         <a href="#projects" class="btn-primary">View Projects →</a>
         <a href="Resume/resume.pdf" download class="btn-secondary">
@@ -2458,7 +2477,7 @@ button:active,
 
     toAnimate.forEach(el => observer.observe(el));
 
-    // ensure immediately-visible sections (e.g., home) are visible without scroll
+   
     toAnimate.forEach(el => {
       if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) {
         el.classList.add('visible');
@@ -2512,6 +2531,38 @@ button:active,
       });
     });
   });
+
+
+const typingElement = document.getElementById('typing');
+const text = `Computer Science & Engineering Student
+
+Aspiring Software Engineer passionate about building impactful solutions through clean code and innovative thinking.`;
+let index = 0;
+
+function type() {
+  if (index < text.length) {
+    if (text.charAt(index) === '\n') {
+      typingElement.innerHTML += '<br>';
+      setTimeout(type, 500); 
+    } else {
+      typingElement.innerHTML += text.charAt(index);
+      setTimeout(type, Math.random() * 50 + 20); 
+    }
+    index++;
+  } else {
+    
+    typingElement.innerHTML = typingElement.innerHTML.replace('impactful solutions', '<span style="color:#a855f7;">impactful solutions</span>');
+    
+    setTimeout(() => {
+      index = 0;
+      typingElement.innerHTML = '';
+      type();
+    }, 3000);
+  }
+}
+
+setTimeout(type, 1000); 
+
 </script>
 
 </body>
