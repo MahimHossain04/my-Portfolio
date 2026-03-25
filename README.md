@@ -36,17 +36,38 @@ I enjoy building clean, efficient, and visually appealing applications while con
 - **Experience** – Professional training and certifications
 - **Education** – Academic background
 - **Projects** – Featured and upcoming works
+- **Hobby** – Capturing moments and exploring the world through my lens
 - **Contact** – Direct email form and social links
 
 ---
 
-## 📂 Featured Project
+## 📂 Projects
+
+### 🌐 Portfolio Website
+- **Description:** A modern, responsive personal portfolio website to showcase my skills, experience, and projects.
+- **Tech Stack:** HTML, CSS
+- **Live Demo:** https://mahimhossain.netlify.app/
+- **GitHub Repo:** https://github.com/MahimHossain04/My-Portfolio
+
+
+### 🧾 EduCover Pro – Elite Builder
+- **Description:** A web-based professional cover page generator designed for university lab reports and assignments.  
+  Includes real-time preview, dynamic input fields, and high-quality PDF export.
+- **Tech Stack:** HTML, CSS, JavaScript
+- **Live Link:** https://mahimhossain04.github.io/EduCover-Pro---Elite-Builder/
+- **GitHub Repo:** https://github.com/MahimHossain04/EduCover-Pro---Elite-Builder.git
+
 
 ### 🏥 Online Hospital Management System
-- **Language:** Java  
-- **Repository:**  
-  https://github.com/MahimHossain04/Online-Hospital-Management-System
+- **Description:** A Java-based hospital management system for managing patients, doctors, appointments, and medical records efficiently.
+- **Tech Stack:** Java, OOP
+- **GitHub Repo:** https://github.com/MahimHossain04/Online-Hospital-Management-System
 
+
+### 🍔 FoodHub Management System
+- **Description:** A comprehensive desktop application built with C# and Windows Forms for managing restaurant operations including food ordering, billing, and inventory management.
+- **Tech Stack:** C#, .NET Framework, WinForms, SQL Server, OOP
+- **GitHub Repo:** https://github.com/MahimHossain04/FoodHub-Management-System.git
 ---
 
 ## 📬 Contact Me
