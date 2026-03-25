@@ -66,6 +66,71 @@
       transform: translateY(0) scale(1);
     }
 
+    .fade-in .animate-on-scroll {
+      transform: scale(0.8);
+    }
+
+    .fade-in .animate-on-scroll.visible {
+      transform: scale(1);
+    }
+
+    .slide-left .animate-on-scroll {
+      transform: translateX(-100px);
+    }
+
+    .slide-left .animate-on-scroll.visible {
+      transform: translateX(0);
+    }
+
+    .slide-right .animate-on-scroll {
+      transform: translateX(100px);
+    }
+
+    .slide-right .animate-on-scroll.visible {
+      transform: translateX(0);
+    }
+
+    .flip-in .animate-on-scroll {
+      transform: rotateY(180deg);
+    }
+
+    .flip-in .animate-on-scroll.visible {
+      transform: rotateY(0);
+    }
+
+    .zoom-in .animate-on-scroll {
+      transform: scale(0);
+    }
+
+    .zoom-in .animate-on-scroll.visible {
+      transform: scale(1);
+    }
+
+    .rotate-in .animate-on-scroll {
+      transform: rotate(-360deg);
+    }
+
+    .rotate-in .animate-on-scroll.visible {
+      transform: rotate(0);
+    }
+
+    .bounce-in .animate-on-scroll {
+      transform: translateY(50px) scale(0.8);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .bounce-in .animate-on-scroll.visible {
+      transform: translateY(0) scale(1);
+    }
+
+    .slide-up .animate-on-scroll {
+      transform: translateY(50px);
+    }
+
+    .slide-up .animate-on-scroll.visible {
+      transform: translateY(0);
+    }
+
     .card,
     .skills-card,
     .experience-card,
@@ -1118,33 +1183,157 @@ button:active,
   }
 }
 
-/* ===== CONTACT – COMPACT & MODERN ===== */
-/* 🔥 EXTRA COMPACT CONTACT INFO BOXES */
+/* ===== HOBBY SECTION ===== */
+.hobby-section {
+  padding: 120px 20px 100px;
+  min-height: 100vh;
+  background: #020617;
+  display: flex;
+  align-items: center;
+}
+
+.hobby-wrapper {
+  width: min(1200px, 100%);
+  margin: auto;
+}
+
+.hobby-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.hobby-tag {
+  color: #8b5cf6;
+  letter-spacing: 3px;
+  font-size: 35px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.hobby-header h2 {
+  font-size: 52px;
+  margin-bottom: 18px;
+}
+
+.hobby-header h2 span {
+  color: #a855f7;
+}
+
+.hobby-header p {
+  max-width: 700px;
+  margin: auto;
+  color: #94a3b8;
+}
+
+.hobby-images {
+  display: grid;
+  gap: 20px;
+}
+
+.hobby-row {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.hobby-track {
+  display: flex;
+  gap: 20px;
+  width: fit-content;
+}
+
+.hobby-track img {
+  width: clamp(220px, 24vw, 340px);
+  height: clamp(160px, 18vw, 240px);
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.track-r2l {
+  animation: scroll-left 90s linear infinite;
+}
+
+.track-l2r {
+  animation: scroll-right 90s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 900px) {
+  .hobby-section {
+    padding: 90px 12px 70px;
+    min-height: auto;
+  }
+
+  .hobby-header h2 {
+    font-size: 36px;
+  }
+
+  .hobby-track img {
+    width: clamp(180px, 45vw, 280px);
+    height: clamp(130px, 28vw, 180px);
+  }
+
+  .hobby-row {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hobby-section {
+    padding: 70px 10px 60px;
+  }
+
+  .hobby-header {
+    margin-bottom: 60px;
+  }
+
+  .hobby-header h2 {
+    font-size: 30px;
+  }
+
+  .hobby-track img {
+    width: clamp(150px, 70vw, 220px);
+    height: clamp(110px, 42vw, 150px);
+  }
+}
+
+
 
 .contact-info .info-card {
-  min-height: unset !important;     /* 🔴 আগের min-height বাতিল */
-  height: 48px !important;           /* 🔥 direct height control */
-  padding: 4px 14px !important;     /* vertical padding আরও কম */
+  min-height: unset !important;     
+  height: 48px !important;           
+  padding: 4px 14px !important;    
   gap: 10px;
   border-radius: 12px;
   display: flex;
   align-items: center;
 }
 
-/* icon আরও ছোট */
+
 .contact-info .info-icon {
   width: 28px !important;
   height: 28px !important;
   border-radius: 10px;
 }
 
-/* label text (Email / Phone / Location) */
+
 .contact-info .info-card span {
   font-size: 10px;
   line-height: 1;
 }
 
-/* value text */
+
 .contact-info .info-card p {
   font-size: 13px;
   line-height: 1.1;
@@ -1227,9 +1416,9 @@ button:active,
 .info-card {
   display: flex;
   align-items: center;
-  gap: 12px;                /* gap কম */
-  padding: 10px 16px;       /* 🔴 height কমানো */
-  border-radius: 14px;      /* একটু compact */
+  gap: 12px;                
+  padding: 10px 16px;       
+  border-radius: 14px;     
   background: linear-gradient(
     145deg,
     rgba(30,41,59,0.4),
@@ -1325,8 +1514,8 @@ button:active,
   width: 100%;
   margin-top: 6px;
   margin-bottom: 18px;
-  padding: 10px 14px;        /* 🔥 height কমানো */
-  border-radius: 12px;      /* more compact */
+  padding: 10px 14px;        
+  border-radius: 12px;      
   background: rgba(2,6,23,0.85);
   border: 1px solid rgba(148,163,184,0.14);
   color: #e5e7eb;
@@ -1335,7 +1524,7 @@ button:active,
 
 
 .contact-form textarea {
-  min-height: 90px;   /* আগের 120px থেকে কম */
+  min-height: 90px;   
   resize: none;
 }
 
@@ -1361,11 +1550,10 @@ button:active,
   }
 }
 
-/* ===== FOOTER ===== */
-/* ===== COMPACT FOOTER ===== */
+
 .site-footer {
   margin-top: auto;
-  padding: 28px 20px; /* 🔥 HEIGHT CONTROL */
+  padding: 28px 20px; 
   background: linear-gradient(
     to bottom,
     rgba(2,6,23,0.6),
@@ -1445,7 +1633,7 @@ button:active,
   }
 
   body {
-    padding-top: 64px; /* header height match */
+    padding-top: 64px; 
   }
 
   .logo img {
@@ -1783,6 +1971,7 @@ button:active,
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
+        <a href="#hobby">Hobby</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -2296,7 +2485,129 @@ button:active,
   </div>
 </section>
 
-<section id="contact" class="contact-section">
+<section id="hobby" class="hobby-section slide-up">
+  <div class="hobby-wrapper">
+    <div class="hobby-header">
+      <span class="hobby-tag">HOBBIES</span>
+      <h2>Photography <span>Passion</span></h2>
+      <p>Capturing moments and exploring the world through my lens.</p>
+    </div>
+    <div class="hobby-images">
+      <div class="hobby-row">
+        <div class="hobby-track track-r2l">
+          <img src="Photography Portfolio/1718037713528.jpg" alt="Photography 1">
+          <img src="Photography Portfolio/20210705125454_IMG_0012-01.jpeg" alt="Photography 2">
+          <img src="Photography Portfolio/20230620_175149 (1).jpg" alt="Photography 3">
+          <img src="Photography Portfolio/20230620_180510.jpg" alt="Photography 4">
+          <img src="Photography Portfolio/20230622_110017 (1).jpg" alt="Photography 5">
+          <img src="Photography Portfolio/20230704_231159.jpg" alt="Photography 6">
+          <img src="Photography Portfolio/20230710_172648.jpg" alt="Photography 7">
+          <img src="Photography Portfolio/20230810_134732.jpg" alt="Photography 8">
+          <img src="Photography Portfolio/20231213_130329.jpg" alt="Photography 9">
+          <img src="Photography Portfolio/20231214_123658-01.jpeg" alt="Photography 10">
+          <img src="Photography Portfolio/20241231_130929 (1).jpg" alt="Photography 11">
+          <img src="Photography Portfolio/b208c76d-e017-4672-8b10-f03d3267377e.jpg" alt="Photography 12">
+          <img src="Photography Portfolio/b8e14d84-b51c-48c8-a00c-9b7baeace198.jpg" alt="Photography 13">
+          <img src="Photography Portfolio/bc5e6c1c-f041-412d-a18e-1f8fb83e3d7d.jpg" alt="Photography 14">
+          <img src="Photography Portfolio/CatPhoto.jpg" alt="Photography 15">
+          <img src="Photography Portfolio/f6abbdf1-3acc-430c-b021-3cb9c6124f88.jpg" alt="Photography 16">
+          <img src="Photography Portfolio/f86832b3-cadb-4572-b97e-84503a17b2e3.jpg" alt="Photography 17">
+          <img src="Photography Portfolio/IMG20201023140350-01.jpeg" alt="Photography 18">
+          <img src="Photography Portfolio/IMG20210730153936-01.jpeg" alt="Photography 19">
+          <img src="Photography Portfolio/IMG_0585.JPG" alt="Photography 20">
+          <img src="Photography Portfolio/IMG_1086.jpg" alt="Photography 21">
+          <img src="Photography Portfolio/IMG_1191-01.jpeg" alt="Photography 22">
+          <img src="Photography Portfolio/IMG_1213.jpg" alt="Photography 23">
+          <img src="Photography Portfolio/IMG_2200.JPG" alt="Photography 24">
+          <img src="Photography Portfolio/IMG_2768.jpg" alt="Photography 25">
+          <img src="Photography Portfolio/IMG_2944.jpg" alt="Photography 26">
+          <img src="Photography Portfolio/IMG_3566.JPG" alt="Photography 27">
+          <img src="Photography Portfolio/IMG_6978.jpg" alt="Photography 28">
+          <img src="Photography Portfolio/IMG_7429_jpg.jpg" alt="Photography 29">
+          <img src="Photography Portfolio/IMG_7792.jpg" alt="Photography 30">
+          <img src="Photography Portfolio/IMG_7871.jpg" alt="Photography 31">
+          <img src="Photography Portfolio/IMG_8046.jpg" alt="Photography 32">
+          <img src="Photography Portfolio/Mahabubur Mahin_Milestone College_01405284138.jpg" alt="Photography 33">
+          <img src="Photography Portfolio/P1.jpg" alt="Photography 34">
+          <img src="Photography Portfolio/P2.jpg" alt="Photography 35">
+          <img src="Photography Portfolio/P3.jpg" alt="Photography 36">
+          <img src="Photography Portfolio/P4.jpg" alt="Photography 37">
+          <img src="Photography Portfolio/Picsart_23-07-04_10-14-38-813.jpg" alt="Photography 38">
+          <img src="Photography Portfolio/Picsart_23-07-15_23-01-05-157.jpg" alt="Photography 39">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.13 AM.jpeg" alt="Photography 40">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.14 AM (1).jpeg" alt="Photography 41">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.14 AM (2).jpeg" alt="Photography 42">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.14 AM.jpeg" alt="Photography 43">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.15 AM (1).jpeg" alt="Photography 44">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.15 AM (2).jpeg" alt="Photography 45">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.15 AM.jpeg" alt="Photography 46">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.16 AM (1).jpeg" alt="Photography 47">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.16 AM (2).jpeg" alt="Photography 48">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.16 AM.jpeg" alt="Photography 49">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.17 AM (1).jpeg" alt="Photography 50">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.17 AM.jpeg" alt="Photography 51">
+        </div>
+      </div>
+      <div class="hobby-row">
+        <div class="hobby-track track-l2r">
+          <img src="Photography Portfolio/1718037713528.jpg" alt="Photography 1">
+          <img src="Photography Portfolio/20210705125454_IMG_0012-01.jpeg" alt="Photography 2">
+          <img src="Photography Portfolio/20230620_175149 (1).jpg" alt="Photography 3">
+          <img src="Photography Portfolio/20230620_180510.jpg" alt="Photography 4">
+          <img src="Photography Portfolio/20230622_110017 (1).jpg" alt="Photography 5">
+          <img src="Photography Portfolio/20230704_231159.jpg" alt="Photography 6">
+          <img src="Photography Portfolio/20230710_172648.jpg" alt="Photography 7">
+          <img src="Photography Portfolio/20230810_134732.jpg" alt="Photography 8">
+          <img src="Photography Portfolio/20231213_130329.jpg" alt="Photography 9">
+          <img src="Photography Portfolio/20231214_123658-01.jpeg" alt="Photography 10">
+          <img src="Photography Portfolio/20241231_130929 (1).jpg" alt="Photography 11">
+          <img src="Photography Portfolio/b208c76d-e017-4672-8b10-f03d3267377e.jpg" alt="Photography 12">
+          <img src="Photography Portfolio/b8e14d84-b51c-48c8-a00c-9b7baeace198.jpg" alt="Photography 13">
+          <img src="Photography Portfolio/bc5e6c1c-f041-412d-a18e-1f8fb83e3d7d.jpg" alt="Photography 14">
+          <img src="Photography Portfolio/CatPhoto.jpg" alt="Photography 15">
+          <img src="Photography Portfolio/f6abbdf1-3acc-430c-b021-3cb9c6124f88.jpg" alt="Photography 16">
+          <img src="Photography Portfolio/f86832b3-cadb-4572-b97e-84503a17b2e3.jpg" alt="Photography 17">
+          <img src="Photography Portfolio/IMG20201023140350-01.jpeg" alt="Photography 18">
+          <img src="Photography Portfolio/IMG20210730153936-01.jpeg" alt="Photography 19">
+          <img src="Photography Portfolio/IMG_0585.JPG" alt="Photography 20">
+          <img src="Photography Portfolio/IMG_1086.jpg" alt="Photography 21">
+          <img src="Photography Portfolio/IMG_1191-01.jpeg" alt="Photography 22">
+          <img src="Photography Portfolio/IMG_1213.jpg" alt="Photography 23">
+          <img src="Photography Portfolio/IMG_2200.JPG" alt="Photography 24">
+          <img src="Photography Portfolio/IMG_2768.jpg" alt="Photography 25">
+          <img src="Photography Portfolio/IMG_2944.jpg" alt="Photography 26">
+          <img src="Photography Portfolio/IMG_3566.JPG" alt="Photography 27">
+          <img src="Photography Portfolio/IMG_6978.jpg" alt="Photography 28">
+          <img src="Photography Portfolio/IMG_7429_jpg.jpg" alt="Photography 29">
+          <img src="Photography Portfolio/IMG_7792.jpg" alt="Photography 30">
+          <img src="Photography Portfolio/IMG_7871.jpg" alt="Photography 31">
+          <img src="Photography Portfolio/IMG_8046.jpg" alt="Photography 32">
+          <img src="Photography Portfolio/Mahabubur Mahin_Milestone College_01405284138.jpg" alt="Photography 33">
+          <img src="Photography Portfolio/P1.jpg" alt="Photography 34">
+          <img src="Photography Portfolio/P2.jpg" alt="Photography 35">
+          <img src="Photography Portfolio/P3.jpg" alt="Photography 36">
+          <img src="Photography Portfolio/P4.jpg" alt="Photography 37">
+          <img src="Photography Portfolio/Picsart_23-07-04_10-14-38-813.jpg" alt="Photography 38">
+          <img src="Photography Portfolio/Picsart_23-07-15_23-01-05-157.jpg" alt="Photography 39">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.13 AM.jpeg" alt="Photography 40">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.14 AM (1).jpeg" alt="Photography 41">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.14 AM (2).jpeg" alt="Photography 42">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.14 AM.jpeg" alt="Photography 43">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.15 AM (1).jpeg" alt="Photography 44">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.15 AM (2).jpeg" alt="Photography 45">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.15 AM.jpeg" alt="Photography 46">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.16 AM (1).jpeg" alt="Photography 47">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.16 AM (2).jpeg" alt="Photography 48">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.16 AM.jpeg" alt="Photography 49">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.17 AM (1).jpeg" alt="Photography 50">
+          <img src="Photography Portfolio/WhatsApp Image 2026-03-25 at 11.29.17 AM.jpeg" alt="Photography 51">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section bounce-in">
 
   <div class="contact-header">
 
@@ -2532,6 +2843,22 @@ button:active,
     });
   });
 
+
+const hobbyTracks = document.querySelectorAll('.hobby-track');
+let photoCount = 0;
+if (hobbyTracks.length) {
+  hobbyTracks.forEach(track => {
+    const items = Array.from(track.children);
+    photoCount = Math.max(photoCount, items.length); 
+    track.innerHTML += track.innerHTML;
+  });
+}
+
+
+const hobbyHeader = document.querySelector('.hobby-header');
+if (hobbyHeader) {
+
+}
 
 const typingElement = document.getElementById('typing');
 const text = `Computer Science & Engineering Student
